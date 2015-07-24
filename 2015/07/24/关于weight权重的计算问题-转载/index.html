@@ -3,17 +3,22 @@
 <head>
   <meta charset="utf-8">
   
-  <title>不工小筑</title>
+  <title>关于Layout_weight权重的计算问题&lt;转载&gt; | 不工小筑</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="不工小筑">
-<meta property="og:type" content="website">
-<meta property="og:title" content="不工小筑">
-<meta property="og:url" content="http://www.phynero.com/index.html">
+  <meta name="description" content="最近写Demo，突然发现了Layout_weight这个属性，发现网上有很多关于这个属性的有意思的讨论，可是找了好多资料都没有找到一个能够说的清楚的，于是自己结合网上资料研究了一下，终于迎刃而解，写出来和大家分享。首先看一下Layout_weight属性的作用：它是用来分配属于空间的一个属性，你可以设置他的权重。很多人不知道剩余空间是个什么概念，下面我先来说说剩余空间。看下面代码：&amp;lt;?xml">
+<meta property="og:type" content="article">
+<meta property="og:title" content="关于Layout_weight权重的计算问题<转载>">
+<meta property="og:url" content="http://www.phynero.com/2015/07/24/关于weight权重的计算问题-转载/index.html">
 <meta property="og:site_name" content="不工小筑">
-<meta property="og:description" content="不工小筑">
+<meta property="og:description" content="最近写Demo，突然发现了Layout_weight这个属性，发现网上有很多关于这个属性的有意思的讨论，可是找了好多资料都没有找到一个能够说的清楚的，于是自己结合网上资料研究了一下，终于迎刃而解，写出来和大家分享。首先看一下Layout_weight属性的作用：它是用来分配属于空间的一个属性，你可以设置他的权重。很多人不知道剩余空间是个什么概念，下面我先来说说剩余空间。看下面代码：&amp;lt;?xml">
+<meta property="og:image" content="http://images.51cto.com/files/uploadimg/20121231/1505300.png">
+<meta property="og:image" content="http://images.51cto.com/files/uploadimg/20121231/1505301.jpg">
+<meta property="og:image" content="http://images.51cto.com/files/uploadimg/20121231/1505302.jpg">
+<meta property="og:image" content="http://images.51cto.com/files/uploadimg/20121231/1505303.jpg">
+<meta property="og:updated_time" content="2015-07-24T02:30:31.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="不工小筑">
-<meta name="twitter:description" content="不工小筑">
+<meta name="twitter:title" content="关于Layout_weight权重的计算问题<转载>">
+<meta name="twitter:description" content="最近写Demo，突然发现了Layout_weight这个属性，发现网上有很多关于这个属性的有意思的讨论，可是找了好多资料都没有找到一个能够说的清楚的，于是自己结合网上资料研究了一下，终于迎刃而解，写出来和大家分享。首先看一下Layout_weight属性的作用：它是用来分配属于空间的一个属性，你可以设置他的权重。很多人不知道剩余空间是个什么概念，下面我先来说说剩余空间。看下面代码：&amp;lt;?xml">
   
     <link rel="alternative" href="/atom.xml" title="不工小筑" type="application/atom+xml">
   
@@ -66,9 +71,7 @@
   </div>
 </header>
       <div class="outer">
-        <section id="main">
-  
-    <article id="post-关于weight权重的计算问题-转载" class="article article-type-post" itemscope itemprop="blogPost">
+        <section id="main"><article id="post-关于weight权重的计算问题-转载" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2015/07/24/关于weight权重的计算问题-转载/" class="article-date">
   <time datetime="2015-07-24T02:25:10.000Z" itemprop="datePublished">2015-07-24</time>
@@ -81,8 +84,8 @@
       <header class="article-header">
         
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2015/07/24/关于weight权重的计算问题-转载/">关于Layout_weight权重的计算问题&lt;转载&gt;</a>
+    <h1 class="article-title" itemprop="name">
+      关于Layout_weight权重的计算问题&lt;转载&gt;
     </h1>
   
 
@@ -100,185 +103,20 @@
     </footer>
   </div>
   
-</article>
-
-
+    
+<nav id="article-nav">
   
-    <article id="post-初识安卓-迟到的学习-一" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2015/07/21/初识安卓-迟到的学习-一/" class="article-date">
-  <time datetime="2015-07-21T10:02:28.000Z" itemprop="datePublished">2015-07-21</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2015/07/21/初识安卓-迟到的学习-一/">初识安卓 迟到的学习(一)</a>
-    </h1>
+    <a href="/2015/07/21/初识安卓-迟到的学习-一/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">初识安卓 迟到的学习(一)</div>
+    </a>
   
+</nav>
 
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <pre><code>android分五种布局 对应5种布局方式
-    -<span class="ruby">----线型布局管理器(<span class="constant">LinearLayout</span>)
-</span>    -<span class="ruby">----表格布局管理器(<span class="constant">TableLayout</span>)
-</span>    -<span class="ruby">----帧布局管理器(<span class="constant">FrameLayout</span>)
-</span>    -<span class="ruby">----相对布局管理器(<span class="constant">RelativeLayout</span>)
-</span>    -<span class="ruby">----绝对布局管理器(<span class="constant">AbsoluteLayout</span>)<span class="number">2.0</span>已废</span>
-</code></pre>
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://www.phynero.com/2015/07/21/初识安卓-迟到的学习-一/" data-id="cich0gqv80002hys6t1hl1mud" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
   
 </article>
 
-
-  
-    <article id="post-分享一些好网址" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2015/07/21/分享一些好网址/" class="article-date">
-  <time datetime="2015-07-21T01:37:18.000Z" itemprop="datePublished">2015-07-21</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2015/07/21/分享一些好网址/">分享一些好网址</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p><a href="http://learnxinyminutes.com/" target="_blank" rel="external"><h3>X分钟速成Y</h3></a></p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://www.phynero.com/2015/07/21/分享一些好网址/" data-id="cich0gqve0003hys6q4rn7yd8" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-SublimeText-全程指南-转载" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2015/07/16/SublimeText-全程指南-转载/" class="article-date">
-  <time datetime="2015-07-16T02:43:18.000Z" itemprop="datePublished">2015-07-16</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2015/07/16/SublimeText-全程指南-转载/">SublimeText 全程指南 &lt;转载&gt;</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>原文链接：<a href="http://lucida.me/blog/sublime-text-complete-guide/">http://lucida.me/blog/sublime-text-complete-guide/</a></p>
-
-  <h2>摘要（Abstract）</h2>
-
-<p>本文系统全面的介绍了Sublime Text，旨在成为最优秀的Sublime Text中文教程。</p>
-
-<h3>更新记录</h3>
-
-<ol><br><li>2014/09/27：完成初稿</li><br><li>2014/09/28：<br><br><ul><br><li>更正打开控制台的快捷键为<code>Ctrl + `</code></li><br><li>更正全局替换的快捷键为<code>Ctrl + Alt + Enter</code></li><br></ul><br></li><br></ol>
-
-
-<h2>前言（Prologue）</h2>
-
-<p>Sublime Text是一款跨平台代码编辑器（Code Editor），从最初的Sublime Text 1.0，到现在的Sublime Text 3.0，Sublime Text从一个不知名的编辑器演变到现在几乎是各平台首选的GUI编辑器。而这样优秀的编辑器却没有一个靠谱的中文教程，所以我试图通过本文弥补这个缺陷。</p>
-
-<h3>编辑器的选择（Editor Choices）</h3>
-
-<p>从初学编程到现在，我用过的编辑器有EditPlus、UltraEdit、Notepad++、Vim、TextMate和Sublime Text，如果让我从中推荐，我会毫不犹豫的推荐Vim和Sublime Text，原因有下面几点：</p>
-        
-          <p class="article-more-link">
-            <a href="/2015/07/16/SublimeText-全程指南-转载/#more">阅读全文</a>
-          </p>
-        
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://www.phynero.com/2015/07/16/SublimeText-全程指南-转载/" data-id="cich0gqvj0006hys6dbvs7nkx" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-first" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2015/07/14/first/" class="article-date">
-  <time datetime="2015-07-14T08:20:33.000Z" itemprop="datePublished">2015-07-14</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2015/07/14/first/">乔迁新居</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>自建博客 以此留念</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://www.phynero.com/2015/07/14/first/" data-id="cich0gqvh0005hys6gkooz92m" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-  
 </section>
         
           <aside id="sidebar">
