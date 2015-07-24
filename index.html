@@ -68,6 +68,43 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-五种Toast详解-转载" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2015/07/24/五种Toast详解-转载/" class="article-date">
+  <time datetime="2015-07-24T06:25:20.000Z" itemprop="datePublished">2015-07-24</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2015/07/24/五种Toast详解-转载/">五种Toast详解 &lt;转载&gt;</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>Android五种Toast特效详解</p>
+<p>1.默认效果:</p><br><p align="center"><a href="http://android.tgbus.com/Android/UploadFiles_4504/201103/2011031711072193.png" target="_blank"><img class="attimg" src="http://img2.tgbusdata.cn/v2/thumb/jpg/MUU1Niw1ODAsMTAwLDQsMywxLC0xLDAscms1MCw2MS4xNTIuMjQyLjEx/u/android.tgbus.com/Android/UploadFiles_4504/201103/2011031711072193.png" width="318" height="270"></a></p><br><p align="left">代码:<br><font style="FONT-SIZE: 10pt">Toast.makeText(getApplicationContext(), “默认Toast样式”,</font><br><font style="FONT-SIZE: 10pt">&nbsp; &nbsp;&nbsp;&nbsp;Toast.LENGTH_SHORT).show();</font><br></p><br><p align="left"><br>2.自定义显示位置效果:</p><br><p align="center"><a href="http://android.tgbus.com/Android/UploadFiles_4504/201103/2011031711110535.png" target="_blank"><img class="attimg" src="http://img2.tgbusdata.cn/v2/thumb/jpg/MDQ2Miw1ODAsMTAwLDQsMywxLC0xLDAscms1MCw2MS4xNTIuMjQyLjEx/u/android.tgbus.com/Android/UploadFiles_4504/201103/2011031711110535.png" width="311" height="238"></a></p><br><p align="left">代码:<br><font style="FONT-SIZE: 10pt">toast = Toast.makeText(getApplicationContext(),</font><br><font style="FONT-SIZE: 10pt">&nbsp; &nbsp;&nbsp;&nbsp;”自定义位置Toast”, Toast.LENGTH_LONG);</font><br><font style="FONT-SIZE: 10pt">&nbsp; &nbsp;toast.setGravity(Gravity.CENTER, 0, 0);</font><br><font style="FONT-SIZE: 10pt">&nbsp; &nbsp;toast.show();</font><br></p><br><p align="left">&nbsp;3.带图片效果:</p><br><p align="center"><a href="http://android.tgbus.com/Android/UploadFiles_4504/201103/2011031711120747.png" target="_blank"><img class="attimg" src="http://img2.tgbusdata.cn/v2/thumb/jpg/REI2QSw1ODAsMTAwLDQsMywxLC0xLDAscms1MCw2MS4xNTIuMjQyLjEx/u/android.tgbus.com/Android/UploadFiles_4504/201103/2011031711120747.png" width="311" height="239"></a></p><br><p align="left">代码<br><font style="FONT-SIZE: 10pt">toast = Toast.makeText(getApplicationContext(),</font><br><font style="FONT-SIZE: 10pt">&nbsp; &nbsp;&nbsp;&nbsp;”带图片的Toast”, Toast.LENGTH_LONG);</font><br><font style="FONT-SIZE: 10pt">&nbsp; &nbsp;toast.setGravity(Gravity.CENTER, 0, 0);</font><br><font style="FONT-SIZE: 10pt">&nbsp; &nbsp;LinearLayout toastView = (LinearLayout) toast.getView();</font><br><font style="FONT-SIZE: 10pt">&nbsp; &nbsp;ImageView imageCodeProject = new ImageView(getApplicationContext());</font><br><font style="FONT-SIZE: 10pt">&nbsp; &nbsp;imageCodeProject.setImageResource(R.drawable.icon);</font><br><font style="FONT-SIZE: 10pt">&nbsp; &nbsp;toastView.addView(imageCodeProject, 0);</font><br><font style="FONT-SIZE: 10pt">&nbsp; &nbsp;toast.show();</font><br><br></p><br><p align="left">4.完全自定义效果:</p><br><p align="center"><a href="http://android.tgbus.com/Android/UploadFiles_4504/201103/2011031711125652.png" target="_blank"><img class="attimg" src="http://img2.tgbusdata.cn/v2/thumb/jpg/REUyQyw1ODAsMTAwLDQsMywxLC0xLDAscms1MCw2MS4xNTIuMjQyLjEx/u/android.tgbus.com/Android/UploadFiles_4504/201103/2011031711125652.png" width="320" height="332"></a></p><br><p align="left">代码<br><font style="FONT-SIZE: 10pt">LayoutInflater inflater = getLayoutInflater();</font><br><font style="FONT-SIZE: 10pt">&nbsp; &nbsp;View layout = inflater.inflate(R.layout.custom,</font><br><font style="FONT-SIZE: 10pt">&nbsp; &nbsp;&nbsp;&nbsp;(ViewGroup) findViewById(R.id.llToast));</font><br><font style="FONT-SIZE: 10pt">&nbsp; &nbsp;ImageView image = (ImageView) layout</font><br><font style="FONT-SIZE: 10pt">&nbsp; &nbsp;&nbsp;&nbsp;.findViewById(R.id.tvImageToast);</font><br><font style="FONT-SIZE: 10pt">&nbsp; &nbsp;image.setImageResource(R.drawable.icon);</font><br><font style="FONT-SIZE: 10pt">&nbsp; &nbsp;TextView title = (TextView) layout.findViewById(R.id.tvTitleToast);</font><br><font style="FONT-SIZE: 10pt">&nbsp; &nbsp;title.setText(“Attention”);</font><br><font style="FONT-SIZE: 10pt">&nbsp; &nbsp;TextView text = (TextView) layout.findViewById(R.id.tvTextToast);</font><br><font style="FONT-SIZE: 10pt">&nbsp; &nbsp;text.setText(“完全自定义Toast”);</font><br><font style="FONT-SIZE: 10pt">&nbsp; &nbsp;toast = new Toast(getApplicationContext());</font><br><font style="FONT-SIZE: 10pt">&nbsp; &nbsp;toast.setGravity(Gravity.RIGHT | Gravity.TOP, 12, 40);</font><br><font style="FONT-SIZE: 10pt">&nbsp; &nbsp;toast.setDuration(Toast.LENGTH_LONG);</font><br><font style="FONT-SIZE: 10pt">&nbsp; &nbsp;toast.setView(layout);</font><br><font style="FONT-SIZE: 10pt">&nbsp; &nbsp;toast.show();</font><br><br></p><br><p align="left">5.其他线程:</p><br><p align="center"><a href="http://android.tgbus.com/Android/UploadFiles_4504/201103/2011031711135396.png" target="_blank"><img class="attimg" src="http://img2.tgbusdata.cn/v2/thumb/jpg/MjYzMCw1ODAsMTAwLDQsMywxLC0xLDAscms1MCw2MS4xNTIuMjQyLjEx/u/android.tgbus.com/Android/UploadFiles_4504/201103/2011031711135396.png" width="317" height="273"></a></p><a href="http://android.tgbus.com/Android/UploadFiles_4504/201103/2011031711135396.png" target="_blank"><br></a><p align="left"><a href="http://android.tgbus.com/Android/UploadFiles_4504/201103/2011031711135396.png" target="_blank">&nbsp;</a>代码:<br><font style="FONT-SIZE: 10pt">new Thread(new Runnable() {</font><br><font style="FONT-SIZE: 10pt">&nbsp; &nbsp; public void run() {</font><br><font style="FONT-SIZE: 10pt">&nbsp; &nbsp;&nbsp;&nbsp;showToast();</font><br><font style="FONT-SIZE: 10pt">&nbsp; &nbsp; }</font><br><font style="FONT-SIZE: 10pt">&nbsp; &nbsp;}).start();</font></p><br><p align="left">　　关于Android五种Toast特效今天巴士就为大家介绍到这里，也都是一些简单的代码，感兴趣的机友们可以来了解下。</p>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://www.phynero.com/2015/07/24/五种Toast详解-转载/" data-id="cich8wua100052us6sxauxerf" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-关于weight权重的计算问题-转载" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2015/07/24/关于weight权重的计算问题-转载/" class="article-date">
@@ -94,7 +131,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://www.phynero.com/2015/07/24/关于weight权重的计算问题-转载/" data-id="cich0gqvg0004hys6ume53i2a" class="article-share-link">Share</a>
+      <a data-url="http://www.phynero.com/2015/07/24/关于weight权重的计算问题-转载/" data-id="cich8wua000042us6lh4tn5cd" class="article-share-link">Share</a>
       
       
     </footer>
@@ -136,7 +173,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://www.phynero.com/2015/07/21/初识安卓-迟到的学习-一/" data-id="cich0gqv80002hys6t1hl1mud" class="article-share-link">Share</a>
+      <a data-url="http://www.phynero.com/2015/07/21/初识安卓-迟到的学习-一/" data-id="cich8wu9s00022us6dv8dwpqd" class="article-share-link">Share</a>
       
       
     </footer>
@@ -173,7 +210,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://www.phynero.com/2015/07/21/分享一些好网址/" data-id="cich0gqve0003hys6q4rn7yd8" class="article-share-link">Share</a>
+      <a data-url="http://www.phynero.com/2015/07/21/分享一些好网址/" data-id="cich8wu9y00032us6gmog35vc" class="article-share-link">Share</a>
       
       
     </footer>
@@ -231,7 +268,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://www.phynero.com/2015/07/16/SublimeText-全程指南-转载/" data-id="cich0gqvj0006hys6dbvs7nkx" class="article-share-link">Share</a>
+      <a data-url="http://www.phynero.com/2015/07/16/SublimeText-全程指南-转载/" data-id="cich8wua400072us6401euo5x" class="article-share-link">Share</a>
       
       
     </footer>
@@ -268,7 +305,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://www.phynero.com/2015/07/14/first/" data-id="cich0gqvh0005hys6gkooz92m" class="article-share-link">Share</a>
+      <a data-url="http://www.phynero.com/2015/07/14/first/" data-id="cich8wua200062us6ki5cmypi" class="article-share-link">Share</a>
       
       
     </footer>
@@ -293,7 +330,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Archives</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/07/">July 2015</a><span class="archive-list-count">5</span></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/07/">July 2015</a><span class="archive-list-count">6</span></li></ul>
     </div>
   </div>
 
@@ -303,6 +340,10 @@
     <h3 class="widget-title">Recents</h3>
     <div class="widget">
       <ul>
+        
+          <li>
+            <a href="/2015/07/24/五种Toast详解-转载/">五种Toast详解 &lt;转载&gt;</a>
+          </li>
         
           <li>
             <a href="/2015/07/24/关于weight权重的计算问题-转载/">关于Layout_weight权重的计算问题&lt;转载&gt;</a>
@@ -318,10 +359,6 @@
         
           <li>
             <a href="/2015/07/16/SublimeText-全程指南-转载/">SublimeText 全程指南 &lt;转载&gt;</a>
-          </li>
-        
-          <li>
-            <a href="/2015/07/14/first/">乔迁新居</a>
           </li>
         
       </ul>
